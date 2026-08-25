@@ -1,0 +1,25 @@
+class Solution {
+    /**
+     * @param {TreeNode} root
+     * @param {TreeNode} p
+     * @param {TreeNode} q
+     * @return {TreeNode}
+     */
+    lowestCommonAncestor(root, p, q) {
+
+        while (root) {
+
+            if (p.val < root.val && q.val < root.val) {
+                root = root.left;
+            }
+
+            else if (p.val > root.val && q.val > root.val) {
+                root = root.right;
+            }
+
+            else {
+                return root;
+            }
+        }
+    }
+}
